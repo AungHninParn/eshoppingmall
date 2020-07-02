@@ -68,10 +68,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
+                            <label for="status" class="col-md-4 col-form-label text-md-right">{{ __('User Type') }}</label>
 
                             <div class="col-md-6">
-                                <select id="status" class="form-control @error('status') is-invalid @enderror" name="status" required autocomplete="status" autofocus>
+                                <select id="status" class="form-control @error('status') is-invalid @enderror" name="status" id="status" onchange="myFunction()" required autocomplete="status" autofocus>
+                                    <option>Choose your type</option>
                                     <option value="1">Customer</option>
                                     <option value="2">Seller</option>
                                 </select>
@@ -90,7 +91,7 @@
                             <label for="shopname" class="col-md-4 col-form-label text-md-right">{{ __('Shop Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="shopname" type="text" class="form-control @error('shopname') is-invalid @enderror" name="shopname" value="{{ old('shopname') }}" required autocomplete="shopname" autofocus>
+                                <input id="shopname" type="text" class="form-control @error('shopname') is-invalid @enderror" name="shopname" value="{{ old('shopname') }}"  autocomplete="shopname" autofocus>
 
                                 @error('shopname')
                                     <span class="invalid-feedback" role="alert">
@@ -102,9 +103,15 @@
                         <div class="form-group row mycustom">
                             <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="type" type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{ old('type') }}" required autocomplete="type" autofocus>
-
+                                                        <div class="col-md-6">
+                                <select id="type" class="form-control @error('type') is-invalid @enderror" name="type" id="type" onchange="myFunction()" required autocomplete="type" autofocus>
+                                    <option>Choose your business type</option>
+                                    
+                                    @foreach($categories as $row)
+                                        <option value="{{$row->id}}">{{$row->name}}</option>
+                                    @endforeach
+                                </select>
+                               
                                 @error('type')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -145,17 +152,19 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
+    
+    
+
 @endsection
 
-<script type="text/javascript">
-        $(document).ready(function(){
-            alert("Hello jQuery!");
-        })
-        
-   
-</script>
+
+

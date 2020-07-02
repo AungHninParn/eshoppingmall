@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use App\Seller;
+use App\Category;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -40,6 +41,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+
     }
 
     /**
@@ -76,8 +78,9 @@ class RegisterController extends Controller
         if($data['status']==2){
 
             $seller=Seller::create([
-            'shop_name' => $data['shop_name'],
-            'category_id'=>$date['category_id']
+            'name' => $data['shopname'],
+            'category_id'=>$data['type'],
+            'user_id'=>$user->id,
 
         ]);
 
@@ -89,4 +92,13 @@ class RegisterController extends Controller
         }
        return $user;
     }
+
+    //overridding to pass data to the register view
+    public function showRegistrationForm()
+    {
+    //Custom code here
+        $categories=Category::all();
+        return view('auth.register',compact('categories'));
+    }
+
 }

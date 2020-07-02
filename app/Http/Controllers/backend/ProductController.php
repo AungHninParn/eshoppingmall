@@ -5,7 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
-use App\Category;
+use App\Seller;
 
 class ProductController extends Controller
 {
@@ -27,8 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {   
-        $categories=Category::all();
-        return view('backend.products.create',compact('categories'));
+        $sellers=Seller::all();
+        return view('backend.products.create',compact('sellers'));
     }
 
     /**
@@ -57,8 +57,7 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->discount=$request->discount;
         $product->description=$request->description;
-        $product->category_id=$request->category;
-        $product->seller_id=$request->seller;
+        $product->seller_id=$request->seller_id;
         $product->save();
 
         //return
@@ -85,8 +84,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product=Product::find($id);
-        $categories=Category::all();
-        return view('backend.products.edit',compact('product','categories'));
+        $sellers=Seller::all();
+        return view('backend.products.edit',compact('product','sellers'));
         
     }
 
@@ -122,7 +121,6 @@ class ProductController extends Controller
         $item->price=$request->price;
         $item->discount=$request->discount;
         $item->description=$request->description;
-        $item->category_id=$request->category_id;
         $item->seller_id=$request->seller_id;
         $item->save();
 

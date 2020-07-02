@@ -20,21 +20,15 @@
                           		Name
                         	</th>
                         	<th>
-                        		Code No.
+                        		Email
                         	</th>
                         	<th>
-                        		Price
+                        		Phone
                         	</th>
                         	<th>
-                        		Discount
+                        		Address
                         	</th>
                         	<th>
-                        		Description
-                        	</th>
-                        	<th>
-                        		Seller
-                        	</th>
-							<th>
 								Action
 							</th>	
                     	</thead>
@@ -62,32 +56,24 @@
                         @endforeach
                     	</tbody>
                     	<tfoot class="text-primary">
-                    		
-                        	<th>
+                    		<th>
                           		No.
                         	</th>
                        		<th>
                           		Name
                         	</th>
                         	<th>
-                        		Code No.
+                        		Email
                         	</th>
                         	<th>
-                        		Price
+                        		Phone
                         	</th>
                         	<th>
-                        		Discount
+                        		Address
                         	</th>
                         	<th>
-                        		Description
-                        	</th>
-                        	<th>
-                        		Seller
-                        	</th>
-							<th>
 								Action
 							</th>	
-                    	
                     	</tfoot>
                 	</table>
             	</div>
