@@ -20,23 +20,15 @@
                           		Name
                         	</th>
                         	<th>
-                        		Code No.
+                        		Email
                         	</th>
                         	<th>
-                        		Price
+                        		Phone
                         	</th>
                         	<th>
-                        		Discount
+                        		Address
                         	</th>
                         	<th>
-                        		Description
-                        	</th>
-                        	<th>
-
-                        		Seller
-
-                        	</th>
-							<th>
 								Action
 							</th>	
                     	</thead>
@@ -50,9 +42,7 @@
                           <td>{{$product->price}}</td>
                           <td>{{$product->discount}}</td>
                           <td>{{$product->description}}</td>
-
                           <td>{{$product->seller->name}}</td>
-
                           <td>
 							<a href="{{route('products.edit',$product->id)}}"  class="btn btn-warning" style="float: left;">Edit</a>
 							
@@ -66,34 +56,24 @@
                         @endforeach
                     	</tbody>
                     	<tfoot class="text-primary">
-                    		
-                        	<th>
+                    		<th>
                           		No.
                         	</th>
                        		<th>
                           		Name
                         	</th>
                         	<th>
-                        		Code No.
+                        		Email
                         	</th>
                         	<th>
-                        		Price
+                        		Phone
                         	</th>
                         	<th>
-                        		Discount
+                        		Address
                         	</th>
                         	<th>
-                        		Description
-                        	</th>
-                        	<th>
-
-                        		Seller
-
-                        	</th>
-							<th>
 								Action
 							</th>	
-                    	
                     	</tfoot>
                 	</table>
             	</div>

@@ -43,11 +43,13 @@
                     <input type="text" class="form-control" name="description" value="{{$product->description}}">
                 </div>
 				<div class="form-group">
-                    <label class="bmd-label-floating">Category</label>
-                    <select class="custom-select mr-sm-2" name="category_id">
-						    <option selected>Choose Category</option>
-					        @foreach($categories as $row)
-				        	<option value="{{$row->id}}" @if($row->id==$product->category_id) {{'selected'}}@endif>{{$row->name}}</option>
+
+                    <label class="bmd-label-floating">Seller</label>
+                    <select class="custom-select mr-sm-2" name="seller_id">
+						    <option selected>Choose Seller</option>
+					        @foreach($sellers as $row)
+				        	<option value="{{$row->id}}" @if($row->id==$product->seller_id) {{'selected'}}@endif>{{$row->name}}</option>
+
 				        			
 					        @endforeach
 					</select>

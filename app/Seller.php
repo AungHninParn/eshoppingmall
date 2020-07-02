@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Seller extends Model
 {
-    use SoftDeletes;
-    protected $fillable=['shop_name','category_id'];
 
+	 use SoftDeletes;
+    protected $fillable=['name','category_id','user_id'];
 
 }

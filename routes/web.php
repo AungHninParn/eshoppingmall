@@ -23,9 +23,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+//middleware
+Route::middleware('role:admin')->group(function(){
+	
+	Route::resource('categories','backend\CategoryController');
+
+	Route::resource('products','backend\ProductController');
+
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('categories','backend\CategoryController');
 
-Route::resource('products','backend\ProductController');
+
 
