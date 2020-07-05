@@ -49,14 +49,17 @@
                     <input type="text" class="form-control" name="description">
                 </div>
 				<div class="form-group">
+
                     <label class="bmd-label-floating">Seller</label>
                     <select class="custom-select mr-sm-2" name="seller_id">
 						    <option selected>Choose Seller</option>
 					        @foreach($sellers as $row)
+
 				        	<option value="{{$row->id}}">{{$row->name}}</option>
 					        @endforeach
 					</select>
                 </div>
+
 
                 <label for="photo">Photo</label>
                 <input type="file" class="form-control-user" name="photo" id="photo" accept="image/*">

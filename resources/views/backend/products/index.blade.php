@@ -47,7 +47,9 @@
                         		Description
                         	</th>
                         	<th>
+
                         		Seller
+
                         	</th>
 							<th>
 								Action
@@ -63,7 +65,9 @@
                           <td>{{$product->price}}</td>
                           <td>{{$product->discount}}</td>
                           <td>{{$product->description}}</td>
+
                           <td>{{$product->seller->name}}</td>
+
                           <td>
 							<a href="{{route('products.edit',$product->id)}}"  class="btn btn-warning" >Edit</a>
 							
@@ -97,7 +101,9 @@
                         		Description
                         	</th>
                         	<th>
+
                         		Seller
+
                         	</th>
 							<th>
 								Action

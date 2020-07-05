@@ -35,7 +35,9 @@
 
 <body class="dark-edition">
   <div class="wrapper ">
+
     <div class="sidebar" data-color="purple" data-background-color="black" data-image="{{asset('backendTemplate/assets/img/sidebar-2.jpg')}}">
+
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -48,12 +50,15 @@
         </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
+
           <li class="nav-item ">
             <a class="nav-link" href="#">
+
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
+
           <li class="nav-item active">
             <a class="nav-link" href="{{route('customers.index')}}">
               <i class="material-icons">person</i>
@@ -66,7 +71,8 @@
               <p>Sellers</p>
             </a>
           </li>
-          <li class="nav-item active5">
+
+          <li class="nav-item ">
             <a class="nav-link" href="{{route('categories.index')}}">
               <i class="material-icons">content_paste</i>
               <p>Category List</p>
@@ -124,6 +130,7 @@
                   <a class="dropdown-item" href="javascript:void(0)">Another One</a>
                 </div>
               </li>
+
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:void(0)" id="accoutMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -140,6 +147,7 @@
                   </form>
                   
                 </div>
+
               </li>
             </ul>
           </div>
@@ -217,22 +225,30 @@
         <li class="header-title">Images</li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
+
             <img src="{{asset('backendTemplate/assets/img/sidebar-1.jpg')}}" alt="">
+
           </a>
         </li>
         <li class="active">
           <a class="img-holder switch-trigger" href="javascript:void(0)">
+
             <img src="{{asset('backendTemplate/assets/img/sidebar-2.jpg')}}" alt="">
+
           </a>
         </li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
+
             <img src="{{asset('backendTemplate/assets/img/sidebar-3.jpg')}}" alt="">
+
           </a>
         </li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
+
             <img src="{{asset('backendTemplate/assets/img/sidebar-4.jpg')}}" alt="">
+
           </a>
         </li>
         <li class="header-title">Thank you</li>

@@ -77,10 +77,12 @@ class RegisterController extends Controller
         ]);
         if($data['status']==2){
 
-            $seller=Seller::create([
+            $seller=Seller::create([          
+
             'name' => $data['shopname'],
             'category_id'=>$data['type'],
             'user_id'=>$user->id,
+
 
         ]);
 
@@ -93,6 +95,7 @@ class RegisterController extends Controller
        return $user;
     }
 
+
     //overridding to pass data to the register view
     public function showRegistrationForm()
     {
@@ -100,5 +103,6 @@ class RegisterController extends Controller
         $categories=Category::all();
         return view('auth.register',compact('categories'));
     }
+
 
 }

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
     use SoftDeletes;
+
     protected $fillable=['name','codeno','photo','price','discount','description','seller_id'];
 
      public function seller()
@@ -16,3 +17,4 @@ class Product extends Model
         return $this->belongsTo('App\Seller');
     }
 }
+

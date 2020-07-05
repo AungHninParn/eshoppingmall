@@ -11,10 +11,12 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+
     <script type="text/javascript" src="{{asset('jquery.min.js')}}"></script>
 
      <!-- custom js -->
     <script type="text/javascript" src="{{asset('custom.js')}}"></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -22,10 +24,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-
-   
-
 
 </head>
 <body>

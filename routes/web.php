@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 //middleware
 Route::middleware('role:admin')->group(function(){
 	
@@ -39,6 +40,7 @@ Route::middleware('role:admin')->group(function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/search','SearchController@search')->name('search');
+
 
 
 
