@@ -35,6 +35,7 @@ Route::middleware('role:admin')->group(function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','frontend\FrontendController@index');
+Route::get('product','frontend\FrontendController@product')->name('product');
 
 
 

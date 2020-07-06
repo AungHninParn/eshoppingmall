@@ -78,7 +78,7 @@
               </li>
 
               <li>
-                <a href="product.html">Products</a>
+                <a href="{{route('product')}}">Products</a>
               </li>
 
 

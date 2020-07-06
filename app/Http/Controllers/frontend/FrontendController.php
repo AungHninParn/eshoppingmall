@@ -14,4 +14,9 @@ class FrontendController extends Controller
     	$products=Product::all();
     	return view('frontend.index',compact('categories','products'));
     }
+    public function product($value=''){
+    	$categories=Category::all();
+    	$allproducts=Product::all();
+    	return view('frontend.product',compact('allproducts','categories'));
+    }
 }
