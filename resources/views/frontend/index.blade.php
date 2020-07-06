@@ -48,13 +48,14 @@
       </div>
     </div>
     <!--Grid row-->
-     @foreach ($categories as $row)
+     
     <div class="row">
       
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
+
+
          <div class="row">
+           @foreach ($categories as $row)
+          
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card">
           <div class="view overlay zoom">
@@ -66,7 +67,11 @@
          </div>
        </div>
      </div>
+     
+  @endforeach
+
     </div>
+
    
 
      <!-- <div class="col-lg-4 col-md-6 mb-4">
@@ -90,9 +95,9 @@
    </div>
  </div>
  </div> -->
-</div><!-- //carousal-item -->
-<div class="carousel-item">
-  <div class="row">
+
+
+
  
 <!--     <div class="col-lg-4 col-md-6 mb-4">
     <div class="card">
@@ -114,24 +119,14 @@
      </div>
    </div>
  </div> -->
-</div>
-</div><!-- item -->
-</div> <!-- inner -->
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div> <!-- carousal end -->
+
+
+  <!-- carousal end -->
 
 
 </div>
 <!--Grid row-->
- @endforeach
-
+ 
 </div>
 <!--Main container-->
 </main>

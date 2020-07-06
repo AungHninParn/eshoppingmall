@@ -83,11 +83,11 @@
 
 
               <li>
-                <a href="about.html">About</a>
+                <a href="{{route('about')}}">About</a>
               </li>
 
               <li>
-                <a href="contact.html">Contact</a>
+                <a href="{{route('contact')}}">Contact</a>
               </li>
             
               <li>

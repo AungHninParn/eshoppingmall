@@ -44,5 +44,13 @@ Route::get('product','frontend\FrontendController@product')->name('product');
 Route::get('/search','SearchController@search')->name('search');
 
 
+Route::get('shop','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
+Route::post('create','frontend\FrontendController@store');
+Route::get('contact','frontend\FrontendController@contact')->name('contact');
+Route::get('about','frontend\FrontendController@about')->name('about');
+
+
+
+
 
 
