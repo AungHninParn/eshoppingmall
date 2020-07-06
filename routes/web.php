@@ -31,11 +31,17 @@ Route::middleware('role:admin')->group(function(){
 
 	Route::resource('products','backend\ProductController');
 
+	Route::resource('customers','backend\CustomerController');
+
+	Route::resource('sellers','backend\SellerController');
+
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','frontend\FrontendController@index');
 Route::get('product','frontend\FrontendController@product')->name('product');
+
+Route::get('/search','SearchController@search')->name('search');
 
 
 

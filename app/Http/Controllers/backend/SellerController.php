@@ -4,9 +4,9 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Category;
+use App\User;
 
-class CategoryController extends Controller
+class SellerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +15,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories=Category::all();
-      //  dd($categories);
-        return view('backend.categories.index',compact('categories'));
- 
+        $users = User::whereHas('roles', function ($query) {
+            $query->where('name', '=', 'seller');
+            })->get();
+        return view('backend.sellers.index',compact('users'));
     }
 
     /**
@@ -28,7 +28,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('backend.categories.create');
+        //
     }
 
     /**
@@ -39,16 +39,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //validation
-        $request->validate(['name'=> 'required|min:5|max:191']);
-
-        //data insert
-        $category=new Category;
-        $category->name=$request->name;
-        $category->save();
-
-        //return
-        return redirect()->route('categories.index');
+        //
     }
 
     /**
@@ -70,9 +61,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category=Category::find($id);
-        //dd($category);
-        return view('backend.categories.edit',compact('category'));
+        //
     }
 
     /**
@@ -84,16 +73,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //validation
-        $request->validate(['name'=> 'required|min:5|max:191']);
-
-        //data update
-        $category=Category::find($id);
-        $category->name=$request->name;
-        $category->save();
-
-        //return
-        return redirect()->route('categories.index');
+        //
     }
 
     /**
@@ -104,8 +84,10 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category=Category::find($id);
-        $category->delete();
-        return redirect()->route('categories.index');
+        $user=User::find($id);
+        $user->delete();
+        $seller=Seller::find($id);
+        $seller->delete();
+        return redirect()->route('sellers.index');
     }
 }

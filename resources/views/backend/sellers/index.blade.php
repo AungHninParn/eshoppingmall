@@ -3,7 +3,7 @@
 @section('search')
             <form class="navbar-form" action="{{route('search')}}" method="GET">
               <div class="input-group no-border">
-                <input type="hidden" name="search" value="3">
+                <input type="hidden" name="search" value="2">
                 <input type="text" value="{{request()->input('query')}}" name="query" class="form-control" placeholder="Search in name">
                 <button type="submit" class="btn btn-default btn-round btn-just-icon">
                   <i class="material-icons">search</i>
@@ -15,12 +15,11 @@
 
 @section('content')
 <div class="row">
-    
     <div class="col-md-12">
         <div class="card">
           	<div class="card-header card-header-primary">
-            	<h4 class="card-title " style="display: inline;margin-right:70%;"><a href="{{route('customers.index')}}">Customer Table</a></h4>
-            	
+            	<h4 class="card-title " style="display: inline;margin-right:70%;"><a href="{{route('sellers.index')}}">Seller Table</a></h4>
+
           	</div>
           	<div class="card-body">
             	<div class="table-responsive">
