@@ -48,6 +48,17 @@
                     <label class="bmd-label-floating">Description</label>
                     <input type="text" class="form-control" name="description">
                 </div>
+                				<div class="form-group">
+
+                    <label class="bmd-label-floating">Category</label>
+                    <select class="custom-select mr-sm-2" name="category_id">
+						    <option selected>Choose Category</option>
+					        @foreach($cate as $row)
+
+				        	<option value="{{$row->id}}">{{$row->name}}</option>
+					        @endforeach
+					</select>
+                </div>
 				<div class="form-group">
 
                     <label class="bmd-label-floating">Seller</label>

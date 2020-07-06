@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 use App\Seller;
 
@@ -31,7 +32,8 @@ class ProductController extends Controller
     {   
 
         $sellers=Seller::all();
-        return view('backend.products.create',compact('sellers'));
+        $cate=Category::all();
+        return view('backend.products.create',compact('sellers','cate'));
 
     }
 
@@ -61,6 +63,7 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->discount=$request->discount;
         $product->description=$request->description;
+        $product->category_id=$request->category_id;
 
         $product->seller_id=$request->seller_id;
 

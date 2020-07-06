@@ -34,6 +34,7 @@ Route::middleware('role:admin')->group(function(){
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/','frontend\FrontendController@index');
 
 
 
