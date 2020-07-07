@@ -49,5 +49,13 @@ Route::get('cart','frontend\FrontendController@cart')->name('cart')->middleware(
 
 
 
+Route::get('shop','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
+Route::post('create','frontend\FrontendController@store');
+Route::get('contact','frontend\FrontendController@contact')->name('contact');
+Route::get('about','frontend\FrontendController@about')->name('about');
+
+
+
+
 
 
