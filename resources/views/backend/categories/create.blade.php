@@ -2,11 +2,15 @@
 
 @section('content')
        	
-   <h1 class="h3 mb-2 text-primary">Category Form </h1>
+   <h1 class="h3 mb-2 text-primary" style="display: inline;margin-right: 70%;">Category Form </h1>
+   <a href="{{route('categories.index')}}" >
+               <i class="material-icons">west</i> 
+              </a>
 
 	<div class="card">
 		<div class="card-header">
-			<h6 class="text-primary">Create Category</h6>
+			<h6 class="text-primary" >Create Category</h6>
+			
 		</div>
 		<div class="card-body">
 			@if ($errors->any())

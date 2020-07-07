@@ -72,8 +72,13 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
+<<<<<<< HEAD
   
   background:url("/frontendtemplate/images/loginbg.jpg")no-repeat; 
+=======
+  background: url("/images/login.jpg")no-repeat;
+  background-size: auto;
+>>>>>>> df5189b2f5da965b1c44988e5f9fe83b3d9ff2ed
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -2305,11 +2310,13 @@ textarea.form-control {
 
 .form-group {
   margin-bottom: 1rem;
+  color: #fff;
 }
 
 .form-text {
   display: block;
   margin-top: 0.25rem;
+
 }
 
 .form-row {
@@ -5005,6 +5012,9 @@ input[type=button].btn-block {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
+  background-color: #3b4652;
+  opacity: .84;
+  box-shadow: 0px 0px 2px #484848;
 }
 
 .card-title {

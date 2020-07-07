@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Product;
+use App\Category;
 
 class SearchController extends Controller
 {
@@ -30,7 +31,7 @@ class SearchController extends Controller
     	return view('backend.sellers.index',compact('users'));
     	}
     	//find customer
-    	else{
+    	elseif($search==2){
 		$request->validate(['query'=> 'required|min:3']);
     	$q=$request->input('query');
     	$users = User::whereHas('roles', function ($query) {
@@ -40,6 +41,13 @@ class SearchController extends Controller
     
 		return view('backend.customers.index',compact('users'));
     	}
+        //find category
+        else{
+            $request->validate(['query'=> 'required|min:3']);
+            $query=$request->input('query');
+            $categories=Category::where('name','like',"%$query%")->get();
+            return view('backend.categories.index',compact('categories'));
+        }
 
     }
 }

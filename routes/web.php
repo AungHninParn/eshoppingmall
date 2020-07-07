@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 
@@ -37,11 +35,21 @@ Route::middleware('role:admin')->group(function(){
 
 });
 
+Route::resource('orders','backend\OrderController');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','frontend\FrontendController@index')->name('index');
+<<<<<<< HEAD
+=======
+Route::get('detail/{id}','frontend\FrontendController@detail')->name('detail');
+>>>>>>> df5189b2f5da965b1c44988e5f9fe83b3d9ff2ed
 Route::get('product','frontend\FrontendController@product')->name('product');
 
 Route::get('/search','SearchController@search')->name('search');
+
+Route::get('cart','frontend\FrontendController@cart')->name('cart')->middleware('auth');
+
 
 
 Route::get('shop','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');

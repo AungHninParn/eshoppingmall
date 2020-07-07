@@ -60,28 +60,34 @@
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="{{route('customers.index')}}">
+            <a class="nav-link " href="{{route('customers.index')}}">
               <i class="material-icons">person</i>
               <p>Customers</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="{{route('sellers.index')}}">
               <i class="material-icons">person</i>
               <p>Sellers</p>
             </a>
           </li>
 
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="{{route('categories.index')}}">
               <i class="material-icons">content_paste</i>
               <p>Category List</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="{{route('products.index')}}">
               <i class="material-icons">library_books</i>
               <p>Product List</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="{{route('orders.index')}}">
+              <i class="material-icons">library_books</i>
+              <p>Order List</p>
             </a>
           </li>
 
@@ -329,8 +335,11 @@
 
           if ($sidebar.length != 0) {
             $sidebar.attr('data-background-color', new_color);
+
           }
-        });
+          
+          
+         });
 
         $('.fixed-plugin .img-holder').click(function() {
           $full_page_background = $('.full-page-background');

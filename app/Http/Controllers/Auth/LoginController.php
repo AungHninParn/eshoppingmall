@@ -28,7 +28,11 @@ class LoginController extends Controller
      *
      * @var string
      */
+<<<<<<< HEAD
+    protected $redirectTo = '/';
+=======
     protected $redirectTo ='';
+>>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
 
     /**
      * Create a new controller instance.
@@ -40,6 +44,13 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+<<<<<<< HEAD
+    protected function redirectTo()
+    {   
+        $user=Auth::user();
+        if ($user->hasRole('admin')) {
+            return '/categories';
+=======
 
     protected function redirectTo()
     {
@@ -51,6 +62,7 @@ class LoginController extends Controller
         elseif ($user->hasRole('seller')) {
             return '/shop';
             # code...
+>>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
         }
         else{
             return '/';

@@ -21,7 +21,7 @@
 
           	<div class="card-header card-header-primary">
             	<h4 class="card-title " style="display: inline;margin-right:70%;"><a href="{{route('products.index')}}">Product Table</a></h4>
-            	<a href="{{route('products.create')}}" >+</a>
+            	<a href="{{route('products.create')}}" ><i class="material-icons">add_box</i></a>
             	
           	</div>
           	<div class="card-body">
@@ -69,7 +69,8 @@
                           <td>{{$product->seller->name}}</td>
 
                           <td>
-							<a href="{{route('products.edit',$product->id)}}"  class="btn btn-warning" >Edit</a>
+							<a href="{{route('products.edit',$product->id)}}"  class="btn btn-warning" >
+              Edit</a>
 							
 							<form action="{{route('products.destroy',$product->id)}}" method="post" onsubmit="return confirm('Are you sure?')"> 
 								@csrf
