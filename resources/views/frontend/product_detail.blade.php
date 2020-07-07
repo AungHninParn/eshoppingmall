@@ -7,7 +7,7 @@
       <div class="col-md-7">
  <div class="card">
 
-  <img class="card-img-bottom" src="{{asset($product->photo)}}" alt="Product Photo" style="height: 550px;">
+  <img class="card-img-bottom" src="{{asset($product->photo)}}" alt="Product Photo" style="height: 300px; width: 300px;">
 </div>
     </div>
     <div class="col-md-5">

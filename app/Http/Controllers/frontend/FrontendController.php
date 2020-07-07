@@ -20,7 +20,6 @@ class FrontendController extends Controller
     	$allproducts=Product::all();
     	return view('frontend.product',compact('allproducts','categories'));
     }
-<<<<<<< HEAD
     public function detail($id)
     {
         $product=Product::find($id);
@@ -33,7 +32,6 @@ class FrontendController extends Controller
     {
         return view('frontend.cart');
     }
-=======
     public function shop($value=''){
 
 
@@ -87,5 +85,4 @@ class FrontendController extends Controller
     	return view('frontend.about');
     }
 
->>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
 }

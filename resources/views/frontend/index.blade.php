@@ -49,15 +49,7 @@
     </div>
     <!--Grid row-->
      
-<<<<<<< HEAD
-   <!--  <div class="row"> -->
-      
-<!--       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"> -->
-    <!--   <div class="carousel-inner">
-        <div class="carousel-item active"> -->
-         <div class="row">
-          @foreach ($categories as $row)
-=======
+
     <div class="row">
       
 
@@ -65,7 +57,6 @@
          <div class="row">
            @foreach ($categories as $row)
           
->>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="card">
           <div class="view overlay zoom">
@@ -77,78 +68,20 @@
          </div>
        </div>
      </div>
-<<<<<<< HEAD
-     @endforeach
-=======
      
   @endforeach
 
->>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
-    </div>
+   </div>
 
-   
-<<<<<<< HEAD
+
 </div>
 
 
-</div>
-=======
-
-     <!-- <div class="col-lg-4 col-md-6 mb-4">
-      <div class="card">
-        <div class="view overlay zoom">
-          <img src="images/lotteria.jpg" class="img-fluid " alt="smaple image">
-          <div class="mask flex-center rgba-black-strong">
-           <h2 class="blue-text">Lotteria</h2>
-         </div>
-       </div>
-     </div>
-   </div>
-   <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card">
-      <div class="view overlay zoom">
-        <img src="images/lotteria.jpg" class="img-fluid " alt="smaple image">
-        <div class="mask flex-center rgba-black-strong">
-         <h2 class="blue-text">Lotteria</h2>
-       </div>
-     </div>
-   </div>
- </div>
- </div> -->
-
-
-
- 
-<!--     <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card">
-      <div class="view overlay zoom">
-        <img src="images/lotteria.jpg" class="img-fluid " alt="smaple image">
-        <div class="mask flex-center rgba-black-strong">
-         <h2 class="blue-text">Lotteria</h2>
-       </div>
-     </div>
-   </div>
- </div>
-    <div class="col-lg-4 col-md-6 mb-4">
-    <div class="card">
-      <div class="view overlay zoom">
-        <img src="images/lotteria.jpg" class="img-fluid " alt="smaple image">
-        <div class="mask flex-center rgba-black-strong">
-         <h2 class="blue-text">Lotteria</h2>
-       </div>
-     </div>
-   </div>
- </div> -->
-
-
-  <!-- carousal end -->
 
 
 </div>
 <!--Grid row-->
- 
-</div>
->>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
+
 <!--Main container-->
 </main>
 <!--Main layout-->
