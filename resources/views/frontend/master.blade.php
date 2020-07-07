@@ -28,23 +28,7 @@
         </span>
           <div class="topbar-child2">
 
-<<<<<<< HEAD
-          <span class="topbar-email">
-            <a href="">My Name</a>
-          </span>|
-          <span class="topbar-email">
-            <a href="">Login</a>
-          </span>|
-            <span class="topbar-email">
-            <a href="">Register</a>
-          </span>
-                      <div class="header-wrapicon2">
-              <img src="{{asset('frontendtemplate/images/supermarket.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-              <span class="header-icons-noti">0</span>
 
-              
-
-=======
           @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -66,10 +50,9 @@
 
           <div class="header-wrapicon2">
             <a href="{{route('cart')}}" class="cart_show">
-              <img src="{{asset('frontendtemplate/images/cart.jpg')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+              <img src="{{asset('frontendtemplate/images/supermarket.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
               <span class="header-icons-noti cartnoti"></span>  
             </a>
->>>>>>> df5189b2f5da965b1c44988e5f9fe83b3d9ff2ed
           </div>
 </div>
       </div>

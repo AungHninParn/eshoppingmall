@@ -27,9 +27,10 @@
                   <label data-error="wrong" data-success="right" for="form34">Product name</label>
                 </div>
                                 <div class="md-form mb-3">
+                  <label data-error="wrong" data-success="right" for="form34"></label>
 
                   <input type="file" id="form34" class="form-control validate" name="photo">
-                  <label data-error="wrong" data-success="right" for="form34">Product Photo</label>
+                  
                 </div>
                    <div class="md-form mb-3">
 
