@@ -12,9 +12,13 @@ class Product extends Model
 
     protected $fillable=['name','codeno','photo','price','discount','description','seller_id'];
 
-     public function seller()
+    public function seller()
     {
         return $this->belongsTo('App\Seller');
+    }
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
     }
 }
 

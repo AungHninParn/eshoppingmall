@@ -9,15 +9,6 @@
 			<h6 class="text-primary">Create Product</h6>
 		</div>
 		<div class="card-body">
-			@if ($errors->any())
-				<div class="alert alert-danger">
-					<ul>
-						@foreach($errors->all() as $error)
-							<li>{{$error}}</li>
-						@endforeach
-					</ul>
-				</div>
-			@endif
 			<form method="post" action="{{route('products.store')}}" enctype="multipart/form-data">
 				@csrf
 
@@ -25,42 +16,43 @@
                     <label class="bmd-label-floating">Name</label>
                     <input type="text" class="form-control" name="name">
                 </div>
-                <div class="form-group">
-                
-                    
-                    <input  type="file" name="photo" accept="image/*">
-                </div>
-
+                @error('name')
+    				<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
 
                 <div class="form-group">
                     <label class="bmd-label-floating">Code No.</label>
                     <input type="text" class="form-control" name="codeno">
                 </div>
+                @error('codeno')
+    				<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
+
 				<div class="form-group">
                     <label class="bmd-label-floating">Price</label>
                     <input type="text" class="form-control" name="price">
                 </div>
+                @error('price')
+    				<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
+
 				<div class="form-group">
                     <label class="bmd-label-floating">Discount</label>
                     <input type="text" class="form-control" name="discount">
                 </div>
+                @error('discount')
+    				<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
+
 				<div class="form-group">
                     <label class="bmd-label-floating">Description</label>
                     <input type="text" class="form-control" name="description">
                 </div>
-                				<div class="form-group">
-
-                    <label class="bmd-label-floating">Category</label>
-                    <select class="custom-select mr-sm-2" name="category_id">
-						    <option selected>Choose Category</option>
-					        @foreach($cate as $row)
-
-				        	<option value="{{$row->id}}">{{$row->name}}</option>
-					        @endforeach
-					</select>
-                </div>
+                @error('description')
+    				<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
+                				
 				<div class="form-group">
-
                     <label class="bmd-label-floating">Seller</label>
                     <select class="custom-select mr-sm-2" name="seller_id">
 						    <option selected>Choose Seller</option>
@@ -70,10 +62,16 @@
 					        @endforeach
 					</select>
                 </div>
+                @error('seller')
+    				<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
 
 
                 <label for="photo">Photo</label>
                 <input type="file" class="form-control-user" name="photo" id="photo" accept="image/*">
+                @error('photo')
+    				<div class="alert alert-danger">{{ $message }}</div>
+				@enderror
 
 				<div class="">
 					<button type="submit" class="btn btn-primary">Save</button>

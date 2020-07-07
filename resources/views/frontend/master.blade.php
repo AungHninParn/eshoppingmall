@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
       
-  <link rel="stylesheet" type="text/css" href="font.css">
+ <!--  <link rel="stylesheet" type="text/css" href="font.css"> -->
   <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/styles.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/bootstrap.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/mdb.min.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/fontawesome/css/all.min.css')}}">
 
   </head>
-
-
 
   <body>
    <!--Main Navigation-->
@@ -30,38 +28,43 @@
         </span>
           <div class="topbar-child2">
 
-          <span class="topbar-email">
-            <a href="">My Name</a>
-          </span>|
-          <span class="topbar-email">
-            <a href="">Login</a>
-          </span>|
-            <span class="topbar-email">
-            <a href="">Register</a>
-          </span>
-                      <div class="header-wrapicon2">
+          @if (Route::has('login'))
+                <div class="top-right links">
+                    @auth
+                        <a href="{{ url('/home') }}">
+                          {{Auth::user()->name}}
+                        </a>
+                    @else
+                    <span class="topbar-email">
+                        <a href="{{ route('login') }}">Login |</a>
+                    </span>
+                        @if (Route::has('register'))
+                    <span class="topbar-email">
+                            <a href="{{ route('register') }}">Register</a>
+                    </span>
+                        @endif
+                    @endauth
+                </div>
+            @endif
+
+          <div class="header-wrapicon2">
+            <a href="{{route('cart')}}" class="cart_show">
               <img src="{{asset('frontendtemplate/images/cart.jpg')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-              <span class="header-icons-noti">0</span>
-
-              
-
+              <span class="header-icons-noti cartnoti"></span>  
+            </a>
           </div>
-
-
 </div>
       </div>
-
 
       <div class="wrap_header navbar-expand-lg">
         <!-- Logo -->
         
-        <a href="index.html" class="logo">
+        <a href="{{route('index')}}" class="logo">
           <img src="{{asset('frontendtemplate/images/logo.png')}}" alt="IMG-LOGO">e-Shop
         </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
         <!-- Menu -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -97,15 +100,12 @@
                   <i class="fas fa-search" aria-hidden="true"></i>
                 </form></li>
               </ul>
-           
-    
         </div>
 
-        </div>
+      </div>
       </div>
 
     </header>
-
 
 
 @yield('content')
@@ -204,7 +204,7 @@
   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.bundle.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('frontendtemplate/js/mdb.min.js')}}"></script>
-
+  <script type="text/javascript" src="{{asset('custom.js')}}"></script>
 
 
 </body>

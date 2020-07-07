@@ -102,7 +102,9 @@ class RegisterController extends Controller
     //Custom code here
         $categories=Category::all();
         return view('auth.register',compact('categories'));
+
     }
+
 
 
 }

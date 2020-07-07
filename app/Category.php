@@ -11,9 +11,9 @@ class Category extends Model
     protected $fillable=['name'];
 
 
-    public function products()
+    public function sellers()
     {
-        return $this->hasMany('App\Product');
+        return $this->hasMany('App\Seller');
     }
 
 
