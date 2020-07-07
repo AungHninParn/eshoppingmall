@@ -40,7 +40,7 @@
             <a href="">Register</a>
           </span>
                       <div class="header-wrapicon2">
-              <img src="{{asset('frontendtemplate/images/cart.jpg')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+              <img src="{{asset('frontendtemplate/images/supermarket.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
               <span class="header-icons-noti">0</span>
 
               
@@ -68,7 +68,7 @@
           
             <ul class="navbar-nav main_menu ml-auto" >
               <li>
-                <a href="index.html">Categories</a>
+                <a href="{{route('index')}}">Categories</a>
                 <ul class="sub_menu">
                   <li><a href="index.html">Food & Drink</a></li>
                   <li><a href="home-02.html">Clothing</a></li>
@@ -121,35 +121,70 @@
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
+               <div class="col-md-3 mb-md-0 mb-3">
 
-          <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns here to organize your footer content.</p>
+          <!-- Links -->
+          <h5 class="text-uppercase" >Our Partner</h5>
+
+          <ul class="list-unstyled ">
+            <li>
+              <a href="#!" >PayPal</a>
+            </li>
+            <li>
+              <a href="#!">Visa</a>
+            </li>
+            <li>
+              <a href="#!">MPU</a>
+            </li>
+            <li>
+              <a href="#!">JBC</a>
+            </li>
+          </ul>
 
         </div>
         <!-- Grid column -->
 
         <hr class="clearfix w-100 d-md-none pb-3">
+               <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase">Contact Us</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              Head Office: Yangon
+            </li>
+            <li>
+              Phone: 09575822
+            </li>
+            <li>
+              Location:Pyay Road,Kamayut, Yangon
+            </li>
+            <li>
+              
+            </li>
+          </ul>
+
+        </div>
 
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Our Services</h5>
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Link 1</a>
+              <a href="#!">Delivery Services</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+              <a href="#!">Notification Alert</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
+              <a href="#!">24/7 Call Center</a>
             </li>
             <li>
-              <a href="#!">Link 4</a>
+              <a href="#!">Terms and Condition</a>
             </li>
           </ul>
 
@@ -160,20 +195,20 @@
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Information</h5>
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Link 1</a>
+              <a href="#!">Payment Methods</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+              <a href="#!">Time and Costs</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
+              <a href="#!">Shipping Methods</a>
             </li>
             <li>
-              <a href="#!">Link 4</a>
+              <a href="#!">FAQs</a>
             </li>
           </ul>
 

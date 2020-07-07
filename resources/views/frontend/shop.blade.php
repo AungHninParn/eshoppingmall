@@ -72,7 +72,7 @@
 
               </div>
               <div class="modal-footer d-flex justify-content-center">
-                <button class="btn btn-unique">Post<i class="fas fa-paper-plane-o ml-1"></i></button>
+                <button class="btn btn-indigo">Post<i class="fas fa-paper-plane-o ml-1"></i></button>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@
         </form>
 
         <div class="text-center">
-          <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Post Your Products</a>
+          <a href="" class="btn btn-indigo btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Post Your Products</a>
         </div>
       </div>
     </div>
@@ -105,13 +105,13 @@
    <div class="row">
    	@foreach ($product as $row)
     <div class="col-md-3">
-      <div class="card border-success mb-3" style="max-width: 18rem;">
+      <div class="card border-primary mb-3" style="max-width: 18rem;">
         <div class="card-header">{{$row->name}}
           <p class="card-text">{{$row->price}}Ks</p></div>
           
           <div class="card-img">
             <img src="{{asset($row->photo)}}" style="width: 252px; height: 200px;">
-            <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Edit</a></div>
+            <div class="card-footer bg-transparent border-primary text-center"><a href="#" class="btn btn-indigo">Edit</a></div>
           </div>
 
         </div>
