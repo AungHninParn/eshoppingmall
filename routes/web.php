@@ -53,8 +53,15 @@ Route::get('cart','frontend\FrontendController@cart')->name('cart')->middleware(
 
 Route::get('shop','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
 Route::post('create','frontend\FrontendController@store');
+Route::get('edit/{id}','frontend\FrontendController@edit')->name('edit');
+Route::post('edit/{id}','frontend\FrontendController@update')->name('update');
+Route::delete('delete','frontend\FrontendController@destroy')->name('delete');
 Route::get('contact','frontend\FrontendController@contact')->name('contact');
 Route::get('about','frontend\FrontendController@about')->name('about');
+Route::get('profile','frontend\FrontendController@profile')->name('profile');
+Route::get('orderlist','frontend\FrontendController@orderlist')->name('orderlist');
+Route::post('/search','frontend\FrontendController@search')->name('search');
+
 
 
 

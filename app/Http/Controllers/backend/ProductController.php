@@ -63,12 +63,10 @@ class ProductController extends Controller
         $product->price=$request->price;
         $product->discount=$request->discount;
         $product->description=$request->description;
-<<<<<<< HEAD
-=======
-       
->>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
+        $product->seller_id = $request->seller_id;
 
-        $product->seller_id=$request->seller_id;
+
+       
 
         $product->save();
 

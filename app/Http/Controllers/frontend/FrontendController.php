@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
 use App\Seller;
+use Spatie\Searchable\Search;
 
 class FrontendController extends Controller
 {
@@ -66,9 +67,11 @@ class FrontendController extends Controller
         $product->price=$request->price;
         $product->discount=$request->discount;
         $product->description=$request->description;
+        $product->seller_id = $request->seller_id;
+      
        
 
-        $product->seller_id=$request->seller_id;
+        
 
         $product->save();
 
@@ -76,6 +79,57 @@ class FrontendController extends Controller
         return redirect()->route('shop');
         
     }
+        public function edit($id)
+    {
+        $product=Product::find($id);
+        
+        return view('shop',compact('product'));
+
+        
+    }
+
+    public function update(Request $request, $id)
+    {
+        //validation
+         $request->validate(['name'=> 'required|min:5|max:191',
+            'codeno'=>'required','price'=>'required','discount'=>'required','description'=>'required',
+            'photo'=>'sometimes|mimes:jpeg,bmp,png']);
+
+        //file upload
+        if($request->hasFile('photo')){
+            $imageName= time().'.'.$request->photo->extension();
+            $request->photo->move(public_path('images'),$imageName);
+          //  unlink($request->oldphoto);
+            $filepath='images/'.$imageName;
+        }else{
+            $filepath=$request->oldphoto;
+        }
+
+        //data update
+        $item=Product::find($id);
+        $item->name=$request->name;
+        $item->codeno=$request->codeno;
+        $item->photo=$filepath;
+        $item->price=$request->price;
+        $item->discount=$request->discount;
+        $item->description=$request->description;
+
+$product->seller_id = $request->seller_id;
+      
+        $item->save();
+
+        //return
+        return redirect()->route('shop');
+    }
+        public function destroy($id)
+    {
+        $product=Product::find($id);
+        $product->delete();
+        return redirect()->route('shop');
+    }
+
+
+
 
         public function contact($value=''){
     
@@ -86,6 +140,31 @@ class FrontendController extends Controller
     
     	return view('frontend.about');
     }
+        public function profile($value=''){
+    
+    	return view('frontend.userprofile');
+    }
+        public function orderlist($value=''){
+    
+        return view('frontend.orderlist');
+    }
+
+        public function search(Request $request)
+
+    {
+       
+        $searchResults = (new Search())
+            
+            ->registerModel(Product::class, 'name')
+            ->perform($request->input('query'));
+            // dd($searchResults);
+            // die();
+
+
+        return view('frontend.search', compact('searchResults'));
+    }
+    
+
 
 
 }

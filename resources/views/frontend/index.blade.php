@@ -50,7 +50,7 @@
     <!--Grid row-->
    
 
-    <div class="row">
+<div class="row">
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
@@ -178,7 +178,7 @@
             <!-- Text -->
 
             <!-- Button -->
-            <div>class="text-center">
+            <div class="text-center">
             <button data-id="{{$row->id}}" data-name="{{$row->name}}" data-photo="{{$row->photo}}" data-price="{{$row->price}}" data-discount="{{$row->discount}}" class="btn btn-indigo addtocart">Add to cart</button>
             </div> 
 
