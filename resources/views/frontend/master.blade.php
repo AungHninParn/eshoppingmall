@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
       
- <!--  <link rel="stylesheet" type="text/css" href="font.css"> -->
-  <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/styles.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/mdb.min.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/fontawesome/css/all.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/mdb.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/fontawesome/css/all.min.css')}}">
 
   </head>
 
@@ -32,9 +31,23 @@
           @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">
-                          {{Auth::user()->name}}
-                        </a>
+                    <div class="dropdown">
+                                <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();localStorage.clear();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </div>
                     @else
                     <span class="topbar-email">
                         <a href="{{ route('login') }}">Login |</a>
@@ -46,15 +59,26 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+          @endif
 
+          @role('seller')
+          <div class="header-wrapicon2">
+            <a href="{{route('cart')}}" class="cart_show">
+              <img src="{{asset('frontendtemplate/images/noti.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+          <!--     <span class="header-icons-noti ordernoti"></span>   -->
+            </a>
+          </div>
+          @else
           <div class="header-wrapicon2">
             <a href="{{route('cart')}}" class="cart_show">
               <img src="{{asset('frontendtemplate/images/supermarket.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
               <span class="header-icons-noti cartnoti"></span>  
             </a>
           </div>
-</div>
+
+          @endrole
+          
+        </div>
       </div>
 
       <div class="wrap_header navbar-expand-lg">
@@ -71,8 +95,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           
             <ul class="navbar-nav main_menu ml-auto" >
+              @role('seller')
               <li>
-                <a href="{{route('index')}}">Categories</a>
+                <a href="#">Home</a>
+              </li>
+              @else
+              <li>
+              <a href="{{route('index')}}">Categories</a>
                 <ul class="sub_menu">
                   <li><a href="index.html">Food & Drink</a></li>
                   <li><a href="home-02.html">Clothing</a></li>
@@ -80,12 +109,11 @@
                   <li><a href="home-03.html">Beauty</a></li>
                 </ul>
               </li>
-
               <li>
                 <a href="{{route('product')}}">Products</a>
-              </li>
-
-
+              </li> 
+              @endrole         
+               
               <li>
                 <a href="{{route('about')}}">About</a>
               </li>
@@ -93,16 +121,24 @@
               <li>
                 <a href="{{route('contact')}}">Contact</a>
               </li>
-            
+
+              @role('seller')
+              @else
               <li>
                 <form class="form-inline active-cyan-4" action="{{ route('search') }}" method="post">
                   @csrf
                   <input class="form-control form-control-sm mr-3 w-75" name="query" type="text" placeholder="Search"
                   aria-label="Search">
                   <i class="fas fa-search" aria-hidden="true"></i>
-                </form></li>
+                </form>
+              </li>
+
+              @endrole  
+            
+              
               </ul>
         </div>
+        <!-- edit menu -->
 
       </div>
       </div>
@@ -234,12 +270,11 @@
 
 
 
-  
-  <script type="text/javascript" src="{{asset('frontendtemplate/js/custom.js')}}"></script>
+  <script src="{{ asset('js/app.js') }}" defer></script>
   <script type="text/javascript" src="{{asset('frontendtemplate/js/jquery.min.js')}}"></script>
   
-  <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.min.js')}}"></script>
-  <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.bundle.min.js')}}"></script>
+<!--   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.min.js')}}"></script> -->
+<!--   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.bundle.min.js')}}"></script> -->
   <script type="text/javascript" src="{{asset('frontendtemplate/js/mdb.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('custom.js')}}"></script>
 

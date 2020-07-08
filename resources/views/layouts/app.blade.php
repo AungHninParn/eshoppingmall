@@ -26,15 +26,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/styles.css')}}">
 
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    e-Shopping Mall
+                <a class="navbar-brand logo text-primary" href="{{ url('/') }}">
+                    <img src="{{asset('frontendtemplate/images/logo.png')}}" alt="IMG-LOGO">e-Shop
                 </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -86,4 +88,5 @@
         </main>
     </div>
 </body>
+
 </html>

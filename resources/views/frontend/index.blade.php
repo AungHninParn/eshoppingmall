@@ -27,7 +27,7 @@
         <hr>
         <p align="justify">It is All in One shopping platform in Myanmar.Do you want to buy or sell? Shopping with our e-shopping mall stay at home.You can get everything what you want.
        Let's shopping at e-Shopping Mall...</p>
-        <a href="https://mdbootstrap.com/" class="btn btn-indigo">Start Now!</a>
+        <a href="{{ route('login') }}" class="btn btn-indigo">Start Now!</a>
 
       </div>
       <!--Grid column-->
@@ -48,11 +48,14 @@
       </div>
     </div>
     <!--Grid row-->
-   
 
 <div class="row">
+<<<<<<< HEAD
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+=======
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+>>>>>>> fe6101ce98caa4193d71a05ae1caa0f66a45aa7a
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row">
@@ -67,6 +70,7 @@
        </div>
      </div>
 
+ 
      <div class="col-lg-4 col-md-6 mb-4">
 
       <div class="card">
@@ -90,8 +94,6 @@
  </div>
  </div>
 </div><!-- carousal-item -->
-
-
 
 
 <div class="carousel-item">

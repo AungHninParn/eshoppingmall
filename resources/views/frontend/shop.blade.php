@@ -5,25 +5,36 @@
       <div class="col-md-12">
         <div class="card text-center">
 
-         <div class="card-body">
+      <div class="card-body">
+          <h1>{{$shop_name}}</h1>
           <h5 class="card-title">Sell Your Products</h5>
           <p class="card-text">Make money by sell your products at our e-shopping mall. For joined us thank you so much.</p>
+<<<<<<< HEAD
          <form method="post" action="/create" enctype="multipart/form-data">
 
+=======
+
+
+    <form method="post" action="/create" enctype="multipart/form-data">
+>>>>>>> fe6101ce98caa4193d71a05ae1caa0f66a45aa7a
 				@csrf
-          <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
           aria-hidden="true" >
+
           <div class="modal-dialog" role="document">
             <div class="modal-content">
+
               <div class="modal-header text-center">
                 <h4 class="modal-title w-100 font-weight-bold">Sell Your Products</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
+
               <div class="modal-body mx-3">
                 <div class="md-form mb-3">
                   <input type="hidden" name="seller_id" value="{{$seller_id}}">
+<<<<<<< HEAD
 
                   <input type="text" id="form34" class="form-control validate" name="name">
                   <label data-error="wrong" data-success="right" for="form34">Product name</label>
@@ -32,6 +43,13 @@
                   <label for="form34" class="">
                   
                   </label>
+=======
+                  <input type="text" id="form34" class="form-control validate" name="name">
+                  <label data-error="wrong" data-success="right" for="form34">Product name</label>
+                </div>
+                <div class="md-form mb-3">
+                  <label data-error="wrong" data-success="right" for="form34"></label>
+>>>>>>> fe6101ce98caa4193d71a05ae1caa0f66a45aa7a
 
                   <input type="file" id="form34" class="form-control" name="photo">
              
@@ -44,8 +62,6 @@
                   <input type="text" id="form34" class="form-control validate" name="codeno">
                   <label data-error="wrong" data-success="right" for="form34">Codeno</label>
                 </div>
-
-            
 
                 <div class="md-form mb-3">
 
@@ -66,8 +82,11 @@
                   <label data-error="wrong" data-success="right" for="form8">Description</label>
                 </div>
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fe6101ce98caa4193d71a05ae1caa0f66a45aa7a
               </div>
               <div class="modal-footer d-flex justify-content-center">
                 <button class="btn btn-indigo">Post<i class="fas fa-paper-plane-o ml-1"></i></button>
@@ -75,7 +94,7 @@
             </div>
           </div>
         </div>
-        </form>
+      </form>
 
         <div class="text-center">
           <a href="" class="btn btn-indigo btn-rounded mb-4" data-toggle="modal" data-target="#modalContactForm">Post Your Products</a>

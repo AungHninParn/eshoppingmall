@@ -33,12 +33,15 @@ Route::middleware('role:admin')->group(function(){
 
 	Route::resource('sellers','backend\SellerController');
 
+	Route::resource('orders','backend\OrderController');
+
+
 });
 
-Route::resource('orders','backend\OrderController');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/','frontend\FrontendController@index')->name('index');
 
 Route::get('detail/{id}','frontend\FrontendController@detail')->name('detail');
@@ -51,11 +54,15 @@ Route::get('cart','frontend\FrontendController@cart')->name('cart')->middleware(
 
 
 
-Route::get('shop','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
 Route::post('create','frontend\FrontendController@store');
+<<<<<<< HEAD
 Route::get('edit/{id}','frontend\FrontendController@edit')->name('edit');
 Route::post('edit/{id}','frontend\FrontendController@update')->name('update');
 Route::delete('delete','frontend\FrontendController@destroy')->name('delete');
+=======
+
+Route::get('shop/{id}','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
+>>>>>>> fe6101ce98caa4193d71a05ae1caa0f66a45aa7a
 Route::get('contact','frontend\FrontendController@contact')->name('contact');
 Route::get('about','frontend\FrontendController@about')->name('about');
 Route::get('profile','frontend\FrontendController@profile')->name('profile');
