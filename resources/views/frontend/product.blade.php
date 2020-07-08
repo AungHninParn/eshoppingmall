@@ -3,7 +3,7 @@
 
 <section class="bgwhite p-t-55 p-b-65">
         <div>
-      <h2 class="text-center">All Products</h2>
+      <h1 class="text-center">All Products</h1>
       </div>
 
     <div class="container">
@@ -30,17 +30,20 @@
                   <p class="card-text">{{$row->price}}Ks</p>
                 </div>
           
+
               <div class="card-img">
                 <a href="{{route('detail',$row->id)}}">
                   <img src="{{asset($row->photo)}}" style="width: 252px; height: 200px;">
                 </a>
-                <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-primary">Add to Cart</a>
+                <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-indigo">Add to Cart</a>
                 </div>
               </div>
+
 
             </div>
           </div>
           @endforeach
+
 
           </div>
         </div>

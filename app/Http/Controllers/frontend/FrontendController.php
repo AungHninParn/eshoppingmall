@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
 use App\Seller;
-
 class FrontendController extends Controller
 {
     public function index($value=''){
@@ -20,6 +21,8 @@ class FrontendController extends Controller
     	$allproducts=Product::all();
     	return view('frontend.product',compact('allproducts','categories'));
     }
+
+
     public function detail($id)
     {
         $product=Product::find($id);
@@ -32,16 +35,21 @@ class FrontendController extends Controller
     {
         return view('frontend.cart');
     }
-    public function shop($value=''){
+
+    public function shop($id){
+
+    	$seller=Seller::where('user_id',$id)->get();
+        
+       foreach ($seller as $key => $value) {
+        $seller_id =$value['id'];
+        $shop_name=$value['name'];
+          
+       }
 
 
-
-    	$sellers=Seller::all();
-    	$product=Product::orderBy('id','desc')->get();
-
-    	return view('frontend.shop',compact('sellers','product'));
-
-
+    	$product=Product::where('seller_id',$seller_id)->orderBy('id','desc')->get();
+       
+    	return view('frontend.shop',compact('product','shop_name','seller_id'));
     
     }
     public function store(Request $request)
@@ -70,8 +78,10 @@ class FrontendController extends Controller
 
         $product->save();
 
+        $id=Auth::id();
+
         //return
-        return redirect()->route('shop');
+        return redirect()->route('shop',[$id]);
         
     }
 
@@ -84,5 +94,6 @@ class FrontendController extends Controller
     
     	return view('frontend.about');
     }
+
 
 }

@@ -33,14 +33,19 @@ Route::middleware('role:admin')->group(function(){
 
 	Route::resource('sellers','backend\SellerController');
 
+	Route::resource('orders','backend\OrderController');
+
+
 });
 
-Route::resource('orders','backend\OrderController');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/','frontend\FrontendController@index')->name('index');
+
 Route::get('detail/{id}','frontend\FrontendController@detail')->name('detail');
+
 Route::get('product','frontend\FrontendController@product')->name('product');
 
 Route::get('/search','SearchController@search')->name('search');
@@ -49,8 +54,9 @@ Route::get('cart','frontend\FrontendController@cart')->name('cart')->middleware(
 
 
 
-Route::get('shop','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
 Route::post('create','frontend\FrontendController@store');
+
+Route::get('shop/{id}','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
 Route::get('contact','frontend\FrontendController@contact')->name('contact');
 Route::get('about','frontend\FrontendController@about')->name('about');
 

@@ -11,8 +11,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/css/mdb.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('frontendtemplate/fontawesome/css/all.min.css')}}">
 
-
-
   </head>
 
   <body>
@@ -29,6 +27,7 @@
         </span>
           <div class="topbar-child2">
 
+
           @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -40,7 +39,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();localStorage.clear();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -60,14 +59,25 @@
                         @endif
                     @endauth
                 </div>
-            @endif
+          @endif
 
+          @role('seller')
           <div class="header-wrapicon2">
             <a href="{{route('cart')}}" class="cart_show">
-              <img src="{{asset('frontendtemplate/images/cart.jpg')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+              <img src="{{asset('frontendtemplate/images/noti.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+          <!--     <span class="header-icons-noti ordernoti"></span>   -->
+            </a>
+          </div>
+          @else
+          <div class="header-wrapicon2">
+            <a href="{{route('cart')}}" class="cart_show">
+              <img src="{{asset('frontendtemplate/images/supermarket.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
               <span class="header-icons-noti cartnoti"></span>  
             </a>
           </div>
+
+          @endrole
+          
         </div>
       </div>
 
@@ -85,8 +95,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           
             <ul class="navbar-nav main_menu ml-auto" >
+              @role('seller')
               <li>
-                <a href="#">Categories</a>
+                <a href="#">Home</a>
+              </li>
+              @else
+              <li>
+              <a href="{{route('index')}}">Categories</a>
                 <ul class="sub_menu">
                   <li><a href="index.html">Food & Drink</a></li>
                   <li><a href="home-02.html">Clothing</a></li>
@@ -94,12 +109,11 @@
                   <li><a href="home-03.html">Beauty</a></li>
                 </ul>
               </li>
-
               <li>
                 <a href="{{route('product')}}">Products</a>
-              </li>
-
-
+              </li> 
+              @endrole         
+               
               <li>
                 <a href="{{route('about')}}">About</a>
               </li>
@@ -107,15 +121,23 @@
               <li>
                 <a href="{{route('contact')}}">Contact</a>
               </li>
-            
+
+              @role('seller')
+              @else
               <li>
                 <form class="form-inline active-cyan-4">
                   <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
                   aria-label="Search">
                   <i class="fas fa-search" aria-hidden="true"></i>
-                </form></li>
+                </form>
+              </li>
+
+              @endrole  
+            
+              
               </ul>
         </div>
+        <!-- edit menu -->
 
       </div>
       </div>
@@ -136,35 +158,70 @@
       <div class="row">
 
         <!-- Grid column -->
-        <div class="col-md-6 mt-md-0 mt-3">
+               <div class="col-md-3 mb-md-0 mb-3">
 
-          <!-- Content -->
-          <h5 class="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns here to organize your footer content.</p>
+          <!-- Links -->
+          <h5 class="text-uppercase" >Our Partner</h5>
+
+          <ul class="list-unstyled ">
+            <li>
+              <a href="#!" >PayPal</a>
+            </li>
+            <li>
+              <a href="#!">Visa</a>
+            </li>
+            <li>
+              <a href="#!">MPU</a>
+            </li>
+            <li>
+              <a href="#!">JBC</a>
+            </li>
+          </ul>
 
         </div>
         <!-- Grid column -->
 
         <hr class="clearfix w-100 d-md-none pb-3">
+               <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase">Contact Us</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              Head Office: Yangon
+            </li>
+            <li>
+              Phone: 09575822
+            </li>
+            <li>
+              Location:Pyay Road,Kamayut, Yangon
+            </li>
+            <li>
+              
+            </li>
+          </ul>
+
+        </div>
 
         <!-- Grid column -->
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Our Services</h5>
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Link 1</a>
+              <a href="#!">Delivery Services</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+              <a href="#!">Notification Alert</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
+              <a href="#!">24/7 Call Center</a>
             </li>
             <li>
-              <a href="#!">Link 4</a>
+              <a href="#!">Terms and Condition</a>
             </li>
           </ul>
 
@@ -175,20 +232,20 @@
         <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Information</h5>
 
           <ul class="list-unstyled">
             <li>
-              <a href="#!">Link 1</a>
+              <a href="#!">Payment Methods</a>
             </li>
             <li>
-              <a href="#!">Link 2</a>
+              <a href="#!">Time and Costs</a>
             </li>
             <li>
-              <a href="#!">Link 3</a>
+              <a href="#!">Shipping Methods</a>
             </li>
             <li>
-              <a href="#!">Link 4</a>
+              <a href="#!">FAQs</a>
             </li>
           </ul>
 
@@ -217,7 +274,7 @@
   
 <!--   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.min.js')}}"></script> -->
 <!--   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.bundle.min.js')}}"></script> -->
-<!--   <script type="text/javascript" src="{{asset('frontendtemplate/js/mdb.min.js')}}"></script> -->
+  <script type="text/javascript" src="{{asset('frontendtemplate/js/mdb.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('custom.js')}}"></script>
 
 
