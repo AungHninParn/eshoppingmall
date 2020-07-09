@@ -35,7 +35,8 @@
                 <a href="{{route('detail',$row->id)}}">
                   <img src="{{asset($row->photo)}}" style="width: 252px; height: 200px;">
                 </a>
-                <div class="card-footer bg-transparent border-success text-center"><a href="#" class="btn btn-indigo">Add to Cart</a>
+                <div class="card-footer bg-transparent border-success text-center"><button data-id="{{$row->id}}" data-name="{{$row->name}}" data-photo="{{$row->photo}}" data-price="{{$row->price}}" data-discount="{{$row->discount}}" 
+            data-sellerid="{{$row->seller_id}}" class="btn btn-indigo addtocart">Add to cart</button>
                 </div>
               </div>
 

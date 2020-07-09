@@ -4,11 +4,13 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
 use App\Seller;
+
+
 class FrontendController extends Controller
 {
     public function index($value=''){
@@ -39,7 +41,8 @@ class FrontendController extends Controller
     public function shop($id){
 
     	$seller=Seller::where('user_id',$id)->get();
-        
+
+              
        foreach ($seller as $key => $value) {
         $seller_id =$value['id'];
         $shop_name=$value['name'];
@@ -50,8 +53,8 @@ class FrontendController extends Controller
     	$product=Product::where('seller_id',$seller_id)->orderBy('id','desc')->get();
        
     	return view('frontend.shop',compact('product','shop_name','seller_id'));
-    
     }
+
     public function store(Request $request)
     {
          //validation
@@ -79,20 +82,38 @@ class FrontendController extends Controller
         $product->save();
 
         $id=Auth::id();
-
+     
         //return
         return redirect()->route('shop',[$id]);
         
     }
 
-        public function contact($value=''){
+    public function contact($value='')
+    {
     
     	return view('frontend.contact');
     }
 
-        public function about($value=''){
+    public function about($value='')
+    {
     
     	return view('frontend.about');
+    }
+
+    public function orderlist($id)
+    {   
+        $seller_id = DB::table('sellers')->where('user_id',$id)->value('id');
+       
+       
+        $list = DB::table('orderdetails')
+            ->join('products', 'orderdetails.product_id', '=', 'products.id')
+            ->join('orders', 'orderdetails.order_id', '=', 'orders.id')
+            ->where('products.seller_id',$seller_id)
+            ->get();
+
+
+    
+        return view('frontend.orderlist',compact('list'));
     }
 
 

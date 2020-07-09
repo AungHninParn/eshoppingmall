@@ -22,3 +22,4 @@ class Order extends Model
     	->withPivot('qty')->withTimestamps();
     }
 }
+

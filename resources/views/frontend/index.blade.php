@@ -174,12 +174,12 @@
             <p class="card-text">{{$row->price}}</p>
             <!-- Text -->
 
+
             <!-- Button -->
             <div class="text-center">
-            <button data-id="{{$row->id}}" data-name="{{$row->name}}" data-photo="{{$row->photo}}" data-price="{{$row->price}}" data-discount="{{$row->discount}}" class="btn btn-indigo addtocart">Add to cart</button>
+            <button data-id="{{$row->id}}" data-name="{{$row->name}}" data-photo="{{$row->photo}}" data-price="{{$row->price}}" data-discount="{{$row->discount}}" 
+            data-sellerid="{{$row->seller_id}}" class="btn btn-indigo addtocart">Add to cart</button>
             </div> 
-
-
           </div>
         </div>
 

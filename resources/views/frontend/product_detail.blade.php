@@ -39,7 +39,8 @@
         </tr>
         <tr>
           <td>
-            <button type="button" class="btn btn-outline-success btn-rounded waves-effect">Add to Cart</button>
+            <button data-id="{{$product->id}}" data-name="{{$product->name}}" data-photo="{{$product->photo}}" data-price="{{$product->price}}" data-discount="{{$product->discount}}" 
+            data-sellerid="{{$product->seller_id}}" class="btn btn-indigo addtocart">Add to cart</button>
           </td>
           <td>
              <button type="button" class="btn btn-outline-info btn-rounded waves-effect">Buy Now</button>

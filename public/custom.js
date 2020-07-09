@@ -10,6 +10,8 @@ $(document).ready(function(){
     var photo=$(this).data('photo');
     var price=$(this).data('price');
     var discount=$(this).data('discount');
+    var userid=$(this).data('userid');
+    var sellerid=$(this).data('sellerid');
 
     var product={
     id:id,
@@ -17,8 +19,11 @@ $(document).ready(function(){
     price:price,
     photo:photo,
     discount:discount,
-    qty:1
+    qty:1,
+    userid:userid,
+    sellerid:sellerid
     }
+
   //console.log(product);
 
   var productString=localStorage.getItem("productlist");
@@ -31,12 +36,18 @@ $(document).ready(function(){
   }
 
   var status=false;
+//  var sellerArr=Array();
+
+
 
   $.each(productArray,function(i,v){
     if (id==v.id) {
       status=true;
       v.qty++;
     }
+    // if(sellerid!=v.sellerid){
+    //   sellerArr.push(v.sellerid);
+    // }
   })
 
   if(!status){
@@ -228,3 +239,7 @@ function myFunction() {
      
     }
 	
+//for notifications
+function markNotificationAsRead(){
+  $.get('/markasRead');
+}

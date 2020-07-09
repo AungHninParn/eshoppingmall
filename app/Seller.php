@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 
 class Seller extends Model
 {
 
-	 use SoftDeletes;
+	 use Notifiable,SoftDeletes;
     protected $fillable=['name','category_id','user_id'];
 
     public function products()
@@ -19,5 +20,6 @@ class Seller extends Model
     {
     	return $this->belongsTo('App\Category');
     }
+    
 
 }

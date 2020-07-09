@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,11 +35,10 @@ Route::middleware('role:admin')->group(function(){
 
 	Route::resource('sellers','backend\SellerController');
 
-	Route::resource('orders','backend\OrderController');
-
 
 });
 
+Route::resource('orders','backend\OrderController');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -56,10 +57,26 @@ Route::get('cart','frontend\FrontendController@cart')->name('cart')->middleware(
 
 Route::post('create','frontend\FrontendController@store');
 
-Route::get('shop/{id}','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
 Route::get('contact','frontend\FrontendController@contact')->name('contact');
 Route::get('about','frontend\FrontendController@about')->name('about');
+Route::get('orderlist/{id}','frontend\FrontendController@orderlist')->name('orderlist');
 
+
+
+
+
+Route::get('shop/{id}','frontend\FrontendController@shop')->name('shop')->middleware('role:seller');
+
+Route::get('/markasRead', function(){
+
+	auth()->user()->unreadNotifications->markAsRead();
+
+	//return redirect()->back();
+
+})->name('mark');
+
+
+Route::get('send', 'HomeController@sendNotification');
 
 
 

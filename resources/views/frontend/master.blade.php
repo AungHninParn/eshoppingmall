@@ -63,11 +63,30 @@
 
           @role('seller')
           <div class="header-wrapicon2">
-            <a href="{{route('cart')}}" class="cart_show">
-              <img src="{{asset('frontendtemplate/images/noti.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-          <!--     <span class="header-icons-noti ordernoti"></span>   -->
-            </a>
+       
+    <div class="dropdown" id="markasread" onclick="markNotificationAsRead()">
+      <a id="notifications" class="dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+          <img src="{{asset('frontendtemplate/images/noti.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+          <span>{{count(Auth::user()->unreadnotifications)}}</span> 
+      </a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifications">
+
+            @forelse(auth()->user()->unreadNotifications as $notification)
+           
+              <a href="{{route('orderlist',Auth::id())}}" class="dropdown-item">"{{$notification->data['user_name']}}" orderd your product.</a>
+              @empty
+              
+              <a href="{{route('orderlist',Auth::id())}}">No unread notification</a>
+
+            @endforelse
+
+
+
           </div>
+    </div>
+
+     </div>
           @else
           <div class="header-wrapicon2">
             <a href="{{route('cart')}}" class="cart_show">
@@ -97,7 +116,7 @@
             <ul class="navbar-nav main_menu ml-auto" >
               @role('seller')
               <li>
-                <a href="#">Home</a>
+                <a href="{{route('shop',Auth::id())}}">Home</a>
               </li>
               @else
               <li>

@@ -10,7 +10,6 @@
           <h5 class="card-title">Sell Your Products</h5>
           <p class="card-text">Make money by sell your products at our e-shopping mall. For joined us thank you so much.</p>
 
-
     <form method="post" action="/create" enctype="multipart/form-data">
 				@csrf
         <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"

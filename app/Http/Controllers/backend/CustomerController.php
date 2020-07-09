@@ -28,7 +28,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -88,4 +88,5 @@ class CustomerController extends Controller
         $user->delete();
         return redirect()->route('customers.index');
     }
+
 }
