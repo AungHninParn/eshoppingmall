@@ -50,7 +50,8 @@
     <!--Grid row-->
 
 <div class="row">
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <div class="row">
@@ -136,11 +137,8 @@
   </a>
 </div>  <!-- carousal end -->
 
-
 </div> <!-- gird row -->
-
- </main>
-
+</main>
 
 <section>
   <div class="container-fluid">
@@ -174,7 +172,6 @@
             <p class="card-text">{{$row->price}}</p>
             <!-- Text -->
 
-
             <!-- Button -->
             <div class="text-center">
             <button data-id="{{$row->id}}" data-name="{{$row->name}}" data-photo="{{$row->photo}}" data-price="{{$row->price}}" data-discount="{{$row->discount}}" 
@@ -182,11 +179,8 @@
             </div> 
           </div>
         </div>
-
       </div>
       @endforeach
-
-
     </div>
   </div>
   </section>

@@ -37,9 +37,16 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                  <a class="dropdown-item" href="{{ route('users.index') }}">
+                                    <img src="{{asset('frontendtemplate/images/user.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+        
+                                        {{ __('My Profile') }}
+                                    </a>
+                                    <hr>
+                                    <a class="dropdown-item " href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();localStorage.clear();">
+                                    <img src="{{asset('frontendtemplate/images/logout.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -66,8 +73,8 @@
        
     <div class="dropdown" id="markasread" onclick="markNotificationAsRead()">
       <a id="notifications" class="dropdown-toggle " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-          <img src="{{asset('frontendtemplate/images/noti.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
-          <span>{{count(Auth::user()->unreadnotifications)}}</span> 
+        <img src="{{asset('frontendtemplate/images/noti.png')}}" class="header-icon1 js-show-header-dropdown" alt="ICON">
+        <span>{{count(Auth::user()->unreadnotifications)}}</span> 
       </a>
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="notifications">
@@ -80,8 +87,6 @@
               <a href="{{route('orderlist',Auth::id())}}">No unread notification</a>
 
             @endforelse
-
-
 
           </div>
     </div>
@@ -144,29 +149,22 @@
               @role('seller')
               @else
               <li>
-                <form class="form-inline active-cyan-4">
-                  <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
+                <form class="form-inline active-cyan-4" action="{{ route('search') }}" method="post">
+                  @csrf
+                  <input class="form-control form-control-sm mr-3 w-75" name="query" type="text" placeholder="Search"
                   aria-label="Search">
                   <i class="fas fa-search" aria-hidden="true"></i>
                 </form>
               </li>
 
               @endrole  
-            
-              
-              </ul>
+            </ul>
         </div>
         <!-- edit menu -->
-
       </div>
       </div>
-
     </header>
-
-
 @yield('content')
-
-
   <!-- Footer -->
   <footer class="page-footer font-small grey pt-4 mt-4">
 
@@ -175,9 +173,8 @@
 
       <!-- Grid row -->
       <div class="row">
-
-        <!-- Grid column -->
-               <div class="col-md-3 mb-md-0 mb-3">
+       <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
 
           <!-- Links -->
           <h5 class="text-uppercase" >Our Partner</h5>
@@ -216,11 +213,7 @@
             <li>
               Location:Pyay Road,Kamayut, Yangon
             </li>
-            <li>
-              
-            </li>
           </ul>
-
         </div>
 
         <!-- Grid column -->
@@ -285,17 +278,9 @@
 
   </footer>
   <!-- Footer -->
-
-
-
   <script src="{{ asset('js/app.js') }}" defer></script>
   <script type="text/javascript" src="{{asset('frontendtemplate/js/jquery.min.js')}}"></script>
-  
-<!--   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.min.js')}}"></script> -->
-<!--   <script type="text/javascript" src="{{asset('frontendtemplate/js/bootstrap.bundle.min.js')}}"></script> -->
   <script type="text/javascript" src="{{asset('frontendtemplate/js/mdb.min.js')}}"></script>
   <script type="text/javascript" src="{{asset('custom.js')}}"></script>
-
-
 </body>
 </html>

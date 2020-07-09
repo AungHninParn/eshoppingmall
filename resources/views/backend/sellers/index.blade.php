@@ -1,7 +1,7 @@
 @extends('backend.master')
 
 @section('search')
-            <form class="navbar-form" action="{{route('search')}}" method="GET">
+            <form class="navbar-form" action="{{route('backendsearch')}}" method="GET">
               <div class="input-group no-border">
                 <input type="hidden" name="search" value="2">
                 <input type="text" value="{{request()->input('query')}}" name="query" class="form-control" placeholder="Search in name">

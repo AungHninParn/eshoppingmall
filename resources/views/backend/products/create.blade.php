@@ -48,14 +48,12 @@
                     <label class="bmd-label-floating">Description</label>
                     <input type="text" class="form-control" name="description">
                 </div>
-<<<<<<< HEAD
+
                 @error('description')
     				<div class="alert alert-danger">{{ $message }}</div>
 				@enderror
                 				
-=======
 
->>>>>>> 0b850d4a81185573c3efd125ebbdcfa642fc93bb
 				<div class="form-group">
                     <label class="bmd-label-floating">Seller</label>
                     <select class="custom-select mr-sm-2" name="seller_id">

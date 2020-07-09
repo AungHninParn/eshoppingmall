@@ -94,7 +94,6 @@ class ProductController extends Controller
         $product=Product::find($id);
         $sellers=Seller::all();
         return view('backend.products.edit',compact('product','sellers'));
-
         
     }
 

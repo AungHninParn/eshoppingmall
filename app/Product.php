@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Searchable\Searchable;
+use Spatie\Searchable\SearchResult;
 
 
-class Product extends Model
+class Product extends Model implements Searchable
 {
     use SoftDeletes;
 
@@ -19,6 +21,19 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo('App\Category');
+    }
+        public function getSearchResult(): SearchResult
+    {
+        $url = route('product', $this->id);
+
+        return new SearchResult(
+            $this,
+            $this->name,
+            $this->photo,
+            
+           
+            $url
+        );
     }
 }
 
